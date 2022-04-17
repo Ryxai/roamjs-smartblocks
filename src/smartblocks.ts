@@ -1740,6 +1740,7 @@ export const COMMANDS: {
       const windows = window.roamAlphaAPI.ui.rightSidebar.getWindows();
       if (count <= 0) {
         windows.forEach((w) =>
+          w["block-uid"] = w["block-uid"] ?? w["page-uid"];
           window.roamAlphaAPI.ui.rightSidebar.removeWindow({
             // @ts-ignore broken api
             window: w,
